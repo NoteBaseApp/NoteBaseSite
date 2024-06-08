@@ -5,7 +5,7 @@ FROM node:20 as build
 WORKDIR /usr/src/app
 
 # Copy package.json and package-lock.json
-COPY . .
+COPY ./ ./
 
 # Install dependencies
 RUN npm install
