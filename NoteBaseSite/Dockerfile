@@ -6,8 +6,6 @@ WORKDIR /usr/src/app
 
 # Copy package.json and package-lock.json
 COPY ./ ./
-WORKDIR /NoteBaseSite
-RUN dir -s
 
 # Install dependencies
 RUN npm install
