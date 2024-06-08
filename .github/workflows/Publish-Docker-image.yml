@@ -21,7 +21,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
     
       - name: Build the Docker image
-        run: docker build -t ${{ secrets.DOCKER_USERNAME }}/notebase-site -f NoteBaseSite/NoteBaseSite/Dockerfile ./ --no-cache
+        run: docker build -t ${{ secrets.DOCKER_USERNAME }}/notebase-site -f NoteBaseSite/Dockerfile ./ --no-cache
     
       - name: Docker Push
         run: docker push ${{ secrets.DOCKER_USERNAME }}/notebase-site
