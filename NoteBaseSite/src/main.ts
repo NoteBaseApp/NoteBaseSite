@@ -6,7 +6,7 @@ import { createPinia } from 'pinia'
 import App from './App.vue'
 import router from './router'
 
-require("dotenv").config();
+// require("dotenv").config();  
 
 const app = createApp(App)
 

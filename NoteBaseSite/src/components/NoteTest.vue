@@ -27,6 +27,6 @@ const notes = computed(() => {
   return store.notes;
 });
 onMounted(() => {
-  //store.fetchNotes('79ecc113-5ccc-4f7d-83cf-49cd121d8751');
+  store.fetchNotes('79ecc113-5ccc-4f7d-83cf-49cd121d8751');
 });
 </script>../stores/NoteStore.js
