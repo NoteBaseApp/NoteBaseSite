@@ -1,5 +1,4 @@
 name: Main Tests
-working-directory: ./path-to-your-nodejs-project
 
 on: 
   pull_request:
