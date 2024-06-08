@@ -19,7 +19,8 @@ export const useNoteStore = defineStore("note", {
     actions: {
       async fetchNotes(_id: string) {
         try {
-          const data = await axios.get(`http://localhost:80/note/getbyperson/${_id}`)
+          //const data = await axios.get(`http://localhost:80/note/getbyperson/${_id}`)
+          const data = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/note/getbyperson/${_id}`)
             this.notes = data.data
           }
           catch (error) {
