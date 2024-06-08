@@ -1,15 +1,20 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
+  <div>
+    <button @click="login">Log in</button>
   </div>
 </template>
+<script lang="ts">
+import { useAuth0 } from '@auth0/auth0-vue';
 
-<style>
-@media (min-width: 1024px) {
-  .about {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
+export default {
+  setup() {
+    const { loginWithRedirect } = useAuth0();
+
+    return {
+      login: () => {
+        loginWithRedirect();
+      }
+    };
   }
-}
-</style>
+};
+</script>

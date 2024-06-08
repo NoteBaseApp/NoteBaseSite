@@ -2,7 +2,10 @@
   <div class="hello">
     <h1>Made By Getters</h1>
     <div v-for="note in getNotes" :key="note.id">
-      {{ note.id }} {{ note.title }}
+      {{ note.id }} {{ note.title }} {{ note.text }} {{ note.personId }}
+      <div v-for="tag in note.tagList" :key="tag.id">
+          {{ tag.id }} {{ tag.title }}
+      </div>
     </div>
     <hr>
     <h1>Made By Actions</h1>
