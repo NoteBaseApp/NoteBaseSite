@@ -1,16 +1,8 @@
 <h1>Welcome to SvelteKit</h1>
 <p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<hr>
 
-<p>
-    {#if $page.data.session}
-        <span>
-            <small>Signed in as</small><br/>
-            <strong>{$page.data.session.user?.name ?? "User"}</strong>
-        </span>
-    {:else}
-        HUH
-    {/if}
-</p>
+<hr>
 
 {#each $notes as note}
 <div>
@@ -26,6 +18,4 @@
 
 <script lang="ts">
     import { notes } from "../stores/Notestore";
-    import {page} from "$app/stores";
-
 </script>
