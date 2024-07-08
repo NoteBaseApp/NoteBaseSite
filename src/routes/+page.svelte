@@ -4,7 +4,7 @@
 
 <hr>
 
-{#each $notes as note}
+{#each notes as note}
 <div>
     <h2>{note.title}</h2>
     <p>{note.text}</p>
@@ -17,5 +17,12 @@
 {/each}
 
 <script lang="ts">
-    import { notes } from "../stores/Notestore";
+	import { onMount } from "svelte";
+	import { GetNotes, type Note } from "./+page";
+	import { page } from "$app/stores";
+
+    let notes: Note[] = [];
+    onMount(async () => {
+        notes = await GetNotes($page.data.session?.user?.email || "");
+    })
 </script>
