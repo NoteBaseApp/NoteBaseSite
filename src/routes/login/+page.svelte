@@ -17,9 +17,4 @@
 <script lang="ts">
     import {page} from "$app/stores";
     import { SignIn, SignOut } from "@auth/sveltekit/components"
-    import { authToken } from "$lib";
-
-    authToken.subscribe((token) => {
-      console.log("Authtoken " + token);
-    });
 </script>

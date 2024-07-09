@@ -18,7 +18,7 @@
 
 <script lang="ts">
 	import { onMount } from "svelte";
-	import { type Note } from "./+page";
+	import {type Note } from "./+page";
 	import { page } from "$app/stores";
 
     let notes: Note[] = [];

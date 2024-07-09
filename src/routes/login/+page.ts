@@ -12,6 +12,6 @@ export const load = (async () => {
     //         authToken.set( await GetApiToken(userMail) )
     //     }
     // })
-    await authToken.set( await GetApiToken("joeyjoeyremmers@gmail.com") )
+    await authToken.set(await GetApiToken("joeyjoeyremmers@gmail.com"))
     return {};
 }) satisfies PageLoad;
