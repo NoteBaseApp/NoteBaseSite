@@ -18,11 +18,11 @@
 
 <script lang="ts">
 	import { onMount } from "svelte";
-	import { GetNotes, type Note } from "./+page";
+	import { type Note } from "./+page";
 	import { page } from "$app/stores";
 
     let notes: Note[] = [];
-    onMount(async () => {
-        notes = await GetNotes($page.data.session?.user?.email || "");
-    })
+    // onMount(async () => {
+    //     notes = await GetNotes($page.data.session?.user?.email || "");
+    // })
 </script>

@@ -1,11 +1,17 @@
 export async function GetApiToken(UserMail: string): Promise<string> {
-    try {
-        var response = ((await fetch(`${import.meta.env.VITE_API_URL}/login`, {
-            body: UserMail
-        })));
-        return await response.json();
+    console.log("GetApiToken " + UserMail);
+
+    var response = ((await fetch(`${import.meta.env.VITE_API_URL}/login`, {
+        method: 'POST',
+        headers: {
+            Accept: 'application/json',
+          },
+        body: UserMail
+    })));
+
+    if (!response.ok)
+    {
+        console.log(response.statusText);
     }
-    catch {
-        return ""
-    }
+    return await response.text();
 }
