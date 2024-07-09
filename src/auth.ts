@@ -1,13 +1,13 @@
 import Google from "@auth/core/providers/google"
 import { SvelteKitAuth } from "@auth/sveltekit"
-import { GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET, AUTH_SECRET } from '$env/static/private';
+//import { GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET, AUTH_SECRET } from '$env/static/private';
 
 export const { handle, signIn, signOut } = SvelteKitAuth(async (event) => {
   const authOptions = {
     providers: [
       Google({
-        clientId: GOOGLE_CLIENT_ID,
-        clientSecret: GOOGLE_CLIENT_SECRET
+        clientId: import.meta.env.VITE_GOOGLE_CLIENT_ID,
+        clientSecret: import.meta.env.VITE_GOOGLE_CLIENT_SECRET
       })
     ],
     // callbacks: {
@@ -18,7 +18,7 @@ export const { handle, signIn, signOut } = SvelteKitAuth(async (event) => {
     //     return session;
     //   },
     // },
-    secret: AUTH_SECRET,
+    secret: import.meta.env.VITE_AUTH_SECRET,
     trustHost: true,
   }
   return authOptions
